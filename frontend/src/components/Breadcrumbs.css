@@ -1,0 +1,63 @@
+.breadcrumbs {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    flex-wrap: wrap;
+    color: black;
+}
+
+.crumb-link {
+    color: black;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.crumb-link:hover {
+    color: #864d7f;
+}
+
+.crumb-separator {
+    color: #864d7f;
+    margin: 0 2px;
+}
+
+.crumb-current {
+    color: #4E1E4A;
+}
+
+/* ====== Tablet (768px–1199px) ====== */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .breadcrumbs {
+        font-size: 14px;
+        justify-content: center;
+    }
+}
+
+/* ====== Mobile (до 767px) ====== */
+@media (max-width: 767px) {
+    .breadcrumbs {
+        font-size: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+        line-height: 1.4;
+        gap: 3px;
+    }
+
+    .crumb-separator {
+        margin: 0 3px;
+    }
+}
+
+/* ====== Very small (до 480px) ====== */
+@media (max-width: 480px) {
+    .breadcrumbs {
+        font-size: 12px;
+        text-align: center;
+        gap: 2px;
+    }
+
+    .crumb-separator {
+        font-size: 12px;
+    }
+}

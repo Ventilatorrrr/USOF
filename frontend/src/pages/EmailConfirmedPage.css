@@ -1,0 +1,52 @@
+.email-confirm-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4e1e4a, #864d7f, #c9abc3);
+}
+
+.email-confirm-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 40px;
+    width: 400px;
+    animation: fadeIn 0.6s ease;
+}
+
+.email-confirm-icon {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.email-confirm-card h2 {
+    color: #4e1e4a;
+    font-family: 'Kodchasan', sans-serif;
+    margin-bottom: 10px;
+}
+
+.email-confirm-card p {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.confirm-btn {
+    background-color: #864d7f;
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #4e1e4a;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,70 @@
+.category-list-edit {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.category-chip {
+    background: #f0eef7;
+    color: #4e1e4a;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.category-chip.selected {
+    background: #4e1e4a;
+    color: #fff;
+}
+
+.category-chip input {
+    display: none;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.save-btn-edit
+{
+    background-color: #864d7f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Kodchasan', sans-serif;
+}
+
+.cancel-btn-edit {
+    background-color: #eee;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Kodchasan', sans-serif;
+}
+
+.cancel-btn-edit:hover {
+    background: #999;
+}
+
+.save-btn-edit:hover {
+    background-color: #4e1e4a;
+    transform: scale(1.05);
+}
+
+.cancel-btn-edit:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}

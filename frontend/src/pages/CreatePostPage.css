@@ -1,0 +1,72 @@
+.page-layout {
+    min-height: calc(100vh - 60px);
+    overflow-y: hidden;
+}
+.create-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.create-post-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #333;
+}
+
+.create-post-form input,
+.create-post-form textarea {
+    margin-top: 6px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+.create-post-form input:focus,
+.create-post-form textarea:focus {
+    border-color: #864d7f;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #4e1e4a;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #864d7f;
+}
+
+.error-text {
+    color: #b00020;
+    font-size: 14px;
+}
+
+.category-section {
+    margin-top: 15px;
+}
+
+.category-section h3 {
+    color: #4E1E4A;
+    margin-bottom: 10px;
+}
+
+.no-categories {
+    color: #999;
+    font-style: italic;
+}

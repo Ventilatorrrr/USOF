@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.header * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.header {
+    position: sticky;
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    align-items: center;
+    height: 60px;
+    background-color: #ebeaea;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow: visible;
+    z-index: 2000;
+    font-family: 'Kodchasan', sans-serif;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+
+.site-name {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #4e1e4a;
+}
+
+.header-center {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #d9d9d9;
+    border-radius: 50px;
+    padding: 8px 10px;
+    gap: 5px;
+}
+
+.search-icon {
+    width: 100%;
+    height: 25px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background-color: #d9d9d9;
+    font-family: 'Kodchasan', sans-serif;
+}
+
+.about-link
+{
+    color: #4e1e4a;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.role {
+    font-size: 1rem;
+    color: #555;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 6px rgba(78, 30, 74, 0.3);
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 250px;
+    max-height: 250px;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    padding: 5px 0;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.search-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-item:hover {
+    background: #f4f0f3;
+}
+
+.search-title {
+    display: block;
+    font-weight: 600;
+    color: #4e1e4a;
+}
+
+.search-author {
+    font-size: 0.85rem;
+    color: #7a6878;
+}
+
+.search-dropdown.empty {
+    padding: 10px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+.loader {
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-top-color: #864d7f;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== Tablet (768px–1199px) ====== */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .header {
+        grid-template-columns: 200px 1fr auto;
+        padding: 0 12px;
+    }
+
+    .site-name {
+        font-size: 1.6rem;
+    }
+
+    .search-container {
+        padding: 6px 8px;
+    }
+
+    .search-input {
+        width: 120px;
+        font-size: 0.9rem;
+    }
+
+    .about-link {
+        font-size: 1rem;
+    }
+
+    .username {
+        font-size: 1.1rem;
+        max-width: 130px;
+    }
+
+    .role {
+        font-size: 0.85rem;
+    }
+
+    .avatar {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* ====== Мобільний (до 767px) ====== */
+@media (max-width: 767px) {
+    .header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: 8px;
+        height: auto;
+        padding: 8px 12px;
+    }
+
+    .header-left {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .header-right {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .site-name {
+        font-size: 1.3rem;
+    }
+
+    .avatar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .username {
+        font-size: 1.2rem;
+        margin-right: 4px;
+        max-width: 100px;
+    }
+
+    .header-center {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        order: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .search-container {
+        max-width: none;
+        background-color: #d9d9d9;
+        border-radius: 50px;
+        padding: 6px 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .search-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: none;
+        font-family: 'Kodchasan', sans-serif;
+    }
+
+    .about-link {
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 540px) {
+        .role {
+            display: none;
+        }
+
+        .site-name {
+            font-size: 1.1rem;
+        }
+
+        .header-center {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .search-container {
+            max-width: 200px;
+            flex-basis: 200px;
+        }
+
+        .about-link {
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+    }
+}

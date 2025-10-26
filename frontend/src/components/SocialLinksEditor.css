@@ -1,0 +1,38 @@
+.social-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-row img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-row input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.save-social-btn {
+    margin-top: 12px;
+    background-color: #4e1e4a;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-social-btn:hover {
+    background-color: #864d7f;
+}

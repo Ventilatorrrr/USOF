@@ -1,0 +1,267 @@
+.filter-panel h3 {
+    color: #4E1E4A;
+    margin-bottom: 8px;
+}
+
+.filter-panel label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    color: #4E1E4A;
+    font-size: 0.9rem;
+}
+
+.filter-panel select,
+.filter-panel input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #c9abc3;
+    border-radius: 6px;
+    font-family: 'Kodchasan', sans-serif;
+    margin-bottom: 6px;
+    background-color: white;
+}
+
+.sort-select {
+    width: 150px;
+    padding: 6px 10px;
+    border: 1px solid #c9abc3;
+    border-radius: 6px;
+    background-color: #f8f5fb;
+    color: #4E1E4A;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-select:hover {
+    border-color: rgba(134, 77, 127, 0.5);
+    background-color: #ebeaea;
+}
+
+.sort-select option {
+    padding: 4px 8px;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 0.95rem;
+}
+
+.category-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.category-box {
+    padding: 6px 12px;
+    border-radius: 8px;
+    background-color: #f1eef5;
+    color: #4E1E4A;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    border: 1px solid transparent;
+}
+
+.category-box:hover {
+    background-color: #e2d8ea;
+}
+
+.category-box.active {
+    background-color: #4E1E4A;
+    color: #fff;
+    border-color: #4E1E4A;
+}
+
+.date-filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-field label {
+    font-size: 0.9rem;
+    color: #4E1E4A;
+    font-weight: 500;
+}
+
+.date-field input[type="date"] {
+    appearance: none;
+    width: 120px;
+    background-color: #f8f6f9;
+    border: 1px solid #C9ABC3;
+    border-radius: 8px;
+    padding: 8px 8px;
+    font-size: 0.95rem;
+    color: #4E1E4A;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.date-field input[type="date"]:hover {
+    background-color: #f0e8f2;
+}
+
+.date-field input[type="date"]:focus {
+    outline: none;
+    border-color: #4E1E4A;
+    box-shadow: 0 0 5px rgba(78, 30, 74, 0.3);
+}
+
+/* ====== Tablet (768px–1199px) ====== */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .filter-panel {
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .filter-panel h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+
+    .filter-panel label {
+        font-size: 0.9rem;
+    }
+
+    .filter-panel select,
+    .filter-panel input {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+
+    .category-boxes {
+        gap: 6px;
+    }
+
+    .category-box {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+
+    .sort-select {
+        width: 130px;
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+
+    .date-field input[type="date"] {
+        width: 70%;
+        padding: 6px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ====== Mobile (до 767px) ====== */
+@media (max-width: 767px) {
+    .filter-panel {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .filter-panel h3 {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .filter-panel label {
+        font-size: 0.9rem;
+        margin-top: 8px;
+        margin-bottom: 4px;
+    }
+
+    .filter-panel select,
+    .filter-panel input {
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    .sort-select {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .category-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .category-box {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .category-box.active {
+        background-color: #4E1E4A;
+        color: #fff;
+    }
+
+    .date-filter {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .date-field {
+        width: 90%;
+    }
+
+    .date-field label {
+        font-size: 0.9rem;
+    }
+
+    .date-field input[type="date"] {
+        width: 90%;
+        padding: 8px;
+        font-size: 0.9rem;
+        background-color: #fff;
+    }
+}
+
+/* ====== Very small (до 480px) ====== */
+@media (max-width: 480px) {
+    .filter-panel {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .filter-panel h3 {
+        font-size: 0.95rem;
+    }
+
+    .category-box {
+        padding: 6px 8px;
+        font-size: 0.85rem;
+    }
+
+    .sort-select,
+    .filter-panel select,
+    .filter-panel input {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+
+    .date-field input[type="date"] {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+}

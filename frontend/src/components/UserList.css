@@ -1,0 +1,433 @@
+.user-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.user-card {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.user-avatar-wrapper {
+    flex: 0 0 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.user-info {
+    flex: 1;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.user-login {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4e1e4a;
+}
+
+.status-symbol {
+    font-size: 14px;
+    line-height: 1;
+    margin: 0 4px 0 2px;
+    display: inline-block;
+}
+
+.status-symbol.active {
+    color: #29c37a;
+}
+.status-symbol.inactive {
+    color: #e05252;
+}
+
+.user-created {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.user-role {
+    margin-top: 4px;
+    font-size: 0.95rem;
+    color: #864d7f;
+}
+
+.user-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    min-width: 100px;
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* === Category List Styles === */
+.category-box-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.category-box-admin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-color: #d9d9d9;
+    background: #fff;
+}
+
+.category-info-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    word-break: break-word;
+}
+
+.category-title-admin {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4e1e4a;
+}
+
+.category-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.category-description.empty {
+    color: #999;
+    font-style: italic;
+}
+
+.category-actions-admin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-action-icon {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.category-action-icon:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* === Report List Styles (updated elegant version) === */
+.report-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.report-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 24px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid #eee;
+}
+
+.report-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+    border-color: #ddd;
+}
+
+.report-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.report-meta {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.report-author {
+    font-weight: 600;
+    color: #4e1e4a;
+}
+
+.report-date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.report-type {
+    background: #f3e8f7;
+    color: #864d7f;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+}
+
+.report-id {
+    font-size: 0.85rem;
+    color: #aaa;
+    text-align: right;
+    margin-bottom: 4px;
+}
+
+.report-target {
+    border-radius: 8px;
+    padding: 5px 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    word-break: break-word;
+}
+
+.report-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.view-btn,
+.delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 30px;
+    padding: 7px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    background-color: #864d7f;
+    color: #fff;
+    font-family: 'Kodchasan', sans-serif;
+}
+
+.view-btn:hover {
+    background-color: #4e1e4a;
+    transform: scale(1.05);
+}
+
+.delete-btn:hover {
+    background-color: #4e1e4a;
+    transform: scale(1.05);
+}
+
+.report-reason {
+    background: #f6f6f6;
+    border-left: 4px solid #864d7f;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #333;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+.report-reason strong {
+    color: #4e1e4a;
+}
+
+.no-reports {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+/* ===== Tablet (768px — 1199px) ===== */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .user-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        position: relative;
+        padding: 14px 16px 44px;
+        gap: 14px;
+        border-radius: 10px;
+    }
+
+    .user-avatar-wrapper {
+        flex: 0 0 70px;
+    }
+
+    .user-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    .user-info {
+        flex: 1;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .user-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .user-login {
+        font-size: 1.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+    }
+
+    .status-symbol {
+        flex-shrink: 0;
+        font-size: 14px;
+    }
+
+    .user-role {
+        font-size: 0.9rem;
+        margin-top: 2px;
+    }
+
+    .user-stats {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #666;
+        width: calc(100% - 32px);
+    }
+
+    .user-stats div {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .user-card {
+        position: relative;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 12px 12px 42px;
+    }
+
+    .user-avatar-wrapper {
+        flex: 0 0 50px;
+        margin-right: 10px;
+    }
+
+    .user-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .user-info {
+        flex: 1;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .user-header {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 6px;
+    }
+
+    .user-login {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #4e1e4a;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100px;
+        overflow: hidden;
+    }
+
+    .user-stats {
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        right: 0;
+        padding: 0 12px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        font-size: 0.82rem;
+        color: #666;
+        gap: 15px;
+    }
+
+    .user-stats div {
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,112 @@
+.edit-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 24px;
+    font-family: 'Kodchasan', sans-serif;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease;
+    border: 1px solid #c9abc3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4e1e4a;
+    margin-bottom: 6px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.input-field {
+    width: 95%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Kodchasan', sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+    border-color: #864d7f;
+    box-shadow: 0 0 0 3px rgba(134, 77, 127, 0.2);
+    outline: none;
+}
+
+.error-text {
+    color: #d9534f;
+    font-size: 0.9rem;
+    background: #fcebea;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.success-text {
+    color: #2b8a3e;
+    font-size: 0.9rem;
+    background: #e7f6ea;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.save-btn-login,
+.cancel-btn-login {
+    min-width: 100px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.save-btn-login {
+    background-color: #864d7f;
+    color: #fff;
+}
+
+.save-btn-login:hover {
+    background-color: #4e1e4a;
+    transform: scale(1.05);
+}
+
+.cancel-btn-login {
+    background-color: #eee;
+    color: #333;
+}
+
+.cancel-btn-login:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
