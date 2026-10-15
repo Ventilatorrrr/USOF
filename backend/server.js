@@ -4,7 +4,8 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 
-import initDB from "./db/dbInit.js";
+// import initDB from "./db/dbInit.js";
+import { connectToDB } from './db/db.js';
 import apiRoutes from "./routes.js";
 
 const app = express();
@@ -32,6 +33,6 @@ app.get("/", (req, res) => {
 
 // Run server
 app.listen(PORT, async () => {
-    await initDB();
+    await connectToDB(true);
     console.log(`Server running at http://localhost:${PORT}`);
 });

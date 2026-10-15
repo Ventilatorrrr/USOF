@@ -1,4 +1,4 @@
-import mysql from "mysql";
+import mysql from 'mysql2';
 import { promisify } from "util";
 import dotenv from "dotenv";
 dotenv.config();
@@ -8,10 +8,14 @@ let connection;
 export function connectToDB(withDatabase = true) {
     connection = mysql.createConnection({
         host: process.env.DB_HOST,
+        port: Number(process.env.DB_PORT) || 18141,
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
-        database: withDatabase ? process.env.DB_NAME : undefined,
-        multipleStatements: true
+        database: process.env.DB_NAME,
+        multipleStatements: true,
+        ssl: {
+            rejectUnauthorized: false     // Дозволяє підключитися до Aiven без явно переданого ca.pem файлу
+        }
     });
 
     connection.query = promisify(connection.query).bind(connection);
