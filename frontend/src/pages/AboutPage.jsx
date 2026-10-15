@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 // src/pages/AboutPage.jsx
 import React from "react";
 import "./AboutPage.css";

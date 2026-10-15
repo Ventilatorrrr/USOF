@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import { useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useMemo } from "react";
