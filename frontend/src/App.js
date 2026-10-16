@@ -14,6 +14,7 @@ import AboutPage from "./pages/AboutPage";
 import CreatePostPage from "./pages/CreatePostPage";
 import PasswordResetConfirmPage from "./pages/PasswordResetConfirmPage";
 import EmailConfirmedPage from "./pages/EmailConfirmedPage";
+import ConfirmEmailPage from "./pages/ConfirmEmailPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import AdminUsersPage from "./pages/AdminUsersPage";
 import AdminCategoriesPage from "./pages/AdminCategoriesPage";
@@ -49,6 +50,7 @@ function App() {
                 <Route path="/create-post" element={<CreatePostPage />} />
                 <Route path="/password-reset/confirm/:token" element={<PasswordResetConfirmPage />} />
                 <Route path="/email-confirmed" element={<EmailConfirmedPage />} />
+                <Route path="/confirm-email/:token" element={<ConfirmEmailPage />} />
                 <Route path="/admin/users" element={<AdminUsersPage />} />
                 <Route path="/admin/categories" element={<AdminCategoriesPage />} />
                 <Route path="/admin/reports" element={<AdminReportsPage />} />
