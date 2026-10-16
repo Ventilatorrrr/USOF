@@ -29,6 +29,8 @@ export default function RegisterForm() {
         setMessage("");
         setMsgType("");
 
+        console.log("1. Form submit triggered");
+
         if (form.password !== form.repeatPassword) {
             setMessage("Passwords do not match!");
             setMsgType("error");
@@ -44,20 +46,22 @@ export default function RegisterForm() {
                 email: form.email,
             };
 
+            console.log("2. Sending payload:", payload);
+
             const result = await dispatch(register(payload));
 
-            if (result.meta.requestStatus === "fulfilled") {
+            console.log("3. Redux dispatch result:", result);
 
+            if (register.fulfilled.match(result)) {
                 setMessage("Registration successful! Please check your email to confirm your account.");
                 setMsgType("success");
             } else {
-
                 const errMsg = result.payload || "Registration failed. Please try again later.";
                 setMessage(errMsg);
                 setMsgType("error");
             }
         } catch (err) {
-            console.error("Registration error:", err);
+            console.error("4. Catch error:", err);
             setMessage("Server error. Please try again later.");
             setMsgType("error");
         }
