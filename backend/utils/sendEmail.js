@@ -1,30 +1,21 @@
 // utils/sendEmail.js
-import nodemailer from "nodemailer";
+import { Resend } from 'resend';
 
-const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST || "smtp.gmail.com",
-    port: Number(process.env.EMAIL_PORT) || 465,
-    secure: true, // true для 465, false для 587
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function sendEmail(to, subject, html) {
     try {
-        const info = await transporter.sendMail({
-            from: `"USOF Support" <${process.env.EMAIL_USER}>`,
-            to,
-            subject,
-            html
+        const data = await resend.emails.send({
+            from: 'USOF Support <onboarding@resend.dev>',
+            to: [to],
+            subject: subject,
+            html: html,
         });
-        console.log(`Email sent successfully to ${to}. Response: ${info.response}`);
+
+        console.log(`Email sent via Resend API to ${to}:`, data);
+        return data;
     } catch (err) {
-        console.error("Nodemailer transport error:", err);
-        throw err;
+        console.error("Resend API error:", err);
+        // Не кидаємо throw, щоб сервер не упав у 502, якщо домен пошти некоректний
     }
 }
