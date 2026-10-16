@@ -60,17 +60,18 @@ export const register = async (req, res) => {
 
         const user = await User.findById(id);
 
-        const emailToken = crypto.randomBytes(32).toString("hex");
-        await User.saveEmailToken(user.id, emailToken);
-
-        await sendConfirmationEmail(user, emailToken);
+        try {
+            await sendConfirmationEmail(user);
+        } catch (mailErr) {
+            console.error("Failed to send confirmation email:", mailErr);
+        }
 
         res.status(201).json({
             message: "Registration successful! Please confirm your email before logging in."
         });
 
     } catch (err) {
-        console.error(err);
+        console.error("Registration endpoint error:", err);
         res.status(500).json({ error: "Server error" });
     }
 };
@@ -129,11 +130,18 @@ export const passwordResetConfirm = async (req, res) => {
 
 
 export const confirmEmail = async (req, res) => {
-    const { token } = req.params;
-    const user = await User.findByEmailToken(token);
+    try {
+        const { token } = req.params;
+        const user = await User.findByEmailToken(token);
 
-    if (!user) return res.status(400).json({ error: 'Invalid token' });
+        if (!user) return res.status(400).json({ error: 'Invalid or expired token' });
 
-    await User.confirmEmail(user.id);
-    res.redirect('http://localhost:3000/email-confirmed');
+        await User.confirmEmail(user.id);
+
+        const frontendUrl = process.env.FRONTEND_URL || "https://usof-49rc.vercel.app";
+        res.redirect(`${frontendUrl}/email-confirmed`);
+    } catch (err) {
+        console.error("Confirm email error:", err);
+        res.status(500).json({ error: "Server error" });
+    }
 };

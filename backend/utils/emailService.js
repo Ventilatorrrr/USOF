@@ -8,12 +8,10 @@ export async function sendConfirmationEmail(user) {
     const token = crypto.randomBytes(32).toString("hex");
     await User.saveEmailToken(user.id, token);
 
-    const confirmUrl = `${process.env.BASE_URL}/api/auth/confirm-email/${token}`;
-
-    console.log("User for email:", user);
+    const baseUrl = process.env.FRONTEND_URL || "https://usof-49rc.vercel.app";
+    const confirmUrl = `${baseUrl}/confirm-email/${token}`;
 
     const html = confirmationEmailTemplate(user.login, confirmUrl);
-
     await sendEmail(user.email, "Підтвердіть вашу електронну адресу", html);
 }
 
@@ -21,10 +19,9 @@ export async function sendPasswordResetEmail(user) {
     const token = crypto.randomBytes(32).toString("hex");
     await User.saveResetToken(user.id, token);
 
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
-
+    const frontendUrl = process.env.FRONTEND_URL || "https://usof-49rc.vercel.app";
     const resetUrl = `${frontendUrl}/password-reset/confirm/${token}`;
-    const html = passwordResetTemplate(user.login, resetUrl);
 
+    const html = passwordResetTemplate(user.login, resetUrl);
     await sendEmail(user.email, "Відновлення пароля", html);
 }
