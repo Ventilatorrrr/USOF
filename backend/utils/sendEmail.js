@@ -12,10 +12,15 @@ export default async function sendEmail(to, subject, html) {
             html: html,
         });
 
-        console.log(`Email sent via Resend API to ${to}:`, data);
+        if (data.error) {
+            console.warn(`[Resend Test Mode] Could not send to ${to}: ${data.error.message}`);
+            console.log(`[Confirmation Email Preview]:\n${html}`);
+        } else {
+            console.log(`Email successfully sent to ${to}`);
+        }
+
         return data;
     } catch (err) {
         console.error("Resend API error:", err);
-        // Не кидаємо throw, щоб сервер не упав у 502, якщо домен пошти некоректний
     }
 }
