@@ -30,6 +30,8 @@ function App() {
         }
     }, [dispatch]);
 
+    // ggg
+
     const hideLayoutRoutes = ["/register", "/login", "/password-reset/confirm/:token", "/email-confirmed"];
     const hideLayout = hideLayoutRoutes.some((route) =>
         location.pathname.startsWith(route.replace(":token", ""))
