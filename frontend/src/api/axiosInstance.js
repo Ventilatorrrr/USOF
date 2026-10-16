@@ -1,20 +1,13 @@
 //axiosInstance.js
 import axios from "axios";
 
-const api = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-    headers: { "Content-Type": "application/json" }
-});
+// Прибираємо сліш наприкінці, якщо він раптом там є
+const rawBaseURL = process.env.REACT_APP_API_URL || "https://usof.onrender.com/api";
+const cleanBaseURL = rawBaseURL.replace(/\/+$/, "");
 
-api.interceptors.request.use(config => {
-    const token = localStorage.getItem("token");
-    if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
-    }
-    if (config.method?.toLowerCase() === "get") {
-        config.params = { ...(config.params || {}), _ts: Date.now() };
-    }
-    return config;
+const api = axios.create({
+    baseURL: cleanBaseURL,
+    headers: { "Content-Type": "application/json" }
 });
 
 api.interceptors.request.use((config) => {
@@ -22,7 +15,15 @@ api.interceptors.request.use((config) => {
     if (token && token !== "null") {
         config.headers.Authorization = `Bearer ${token}`;
     }
+
+    // Запобігаємо кешуванню для GET-запитів
+    if (config.method?.toLowerCase() === "get") {
+        config.params = { ...(config.params || {}), _ts: Date.now() };
+    }
+
     return config;
+}, (error) => {
+    return Promise.reject(error);
 });
 
 export default api;

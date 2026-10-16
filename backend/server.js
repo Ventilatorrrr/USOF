@@ -3,8 +3,6 @@ dotenv.config();
 
 import express from "express";
 import cors from "cors";
-
-// import initDB from "./db/dbInit.js";
 import { connectToDB } from './db/db.js';
 import apiRoutes from "./routes.js";
 
@@ -13,22 +11,25 @@ const PORT = process.env.PORT || 5000;
 
 // CORS
 const allowedOrigins = [
-    process.env.FRONTEND_URL,
     "https://usof-49rc.vercel.app",
+    process.env.FRONTEND_URL,
     "http://localhost:3000"
 ].filter(Boolean);
 
-app.use(cors({
-    origin: [
-        'https://usof-49rc.vercel.app',
-        process.env.FRONTEND_URL,
-        'http://localhost:3000'
-    ].filter(Boolean),
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(null, true);
+        }
+    },
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
     credentials: true
-}));
-app.options('*', cors());
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
