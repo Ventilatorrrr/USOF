@@ -24,6 +24,7 @@ export default function RegisterForm() {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
+    // пп
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage("");
